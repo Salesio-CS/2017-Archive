@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>csaサーバー：アップロードページ</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+    </head>
+
+    <body>
+
+      <script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <p>ここはアップロードページです</p>
+
+
+
+        <!--参考サイト：http://php.net/manual/ja/features.file-upload.post-method.php-->
+        
+        <!-- データのエンコード方式である enctype は、必ず以下のようにしなければなりません -->
+        <form enctype="multipart/form-data" action="__URL__" method="POST">
+          <!-- MAX_FILE_SIZE は、必ず "file" input フィールドより前になければなりません -->
+          <!-- value → とりあえず128k -->
+          <input type="hidden" name="MAX_FILE_SIZE" value="131072" />
+          <!-- input 要素の name 属性の値が、$_FILES 配列のキーになります -->
+          このファイルをアップロード: <input name="userfile" type="file" />
+          <input type="submit" value="ファイルを送信" />
+        </form>
+
+
+    <form id="my_form">
+
+        <input type="file" name="file_1">
+        <button type="button" onclick="file_upload()">アップロード</button>
+    </form>
+
+
+
+    </form>
+
+
+      <p><a href="./index.html">戻る</a></p>
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+
+</html>

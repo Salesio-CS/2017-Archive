@@ -1,0 +1,3 @@
+[submodule "Knowledge-view"]
+	path = Knowledge-view
+	url = https://github.com/dosiren/Knowledge-view.git

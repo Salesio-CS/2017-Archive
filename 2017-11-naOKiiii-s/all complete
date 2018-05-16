@@ -1,0 +1,85 @@
+from __future__ import print_function
+import socket
+import time
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(4, GPIO.IN)
+from contextlib import closing
+
+import time
+import picamera
+import datetime
+import smtplib
+import threading
+from email import Encoders
+from email.Utils import formatdate
+from email.MIMEBase import MIMEBase
+from email.Header import Header
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
+from email.mime.image import MIMEImage
+
+
+def main():
+    while True:
+        inputValue = GPIO.input(4)
+        if (inputValue == True):
+            filename=capture()
+            send(filename)
+            time.sleep(300)
+        time.sleep(1)
+            
+def send(file):
+    img = [file]
+    send_email_img('no_reply@gmail.com', '******@gmail.com', u'Alert', u'Alert\n', img)
+
+def send_email_img(from_addr, to_addr, subject, body, imgs=[], server='smtp.gmail.com', port=587):
+    encoding='utf-8'
+    msg = MIMEMultipart()
+    mt = MIMEText(body.encode(encoding), 'plain', encoding)
+
+    if imgs:
+        for fn in imgs:
+            img = open(fn, 'rb').read()
+            mj = MIMEImage(img, 'png', filename=fn)
+            mj.add_header("Content-Disposition", "attachment", filename=fn)
+            msg.attach(mj)
+        msg.attach(mt)
+    else:
+        msg = mt
+
+    msg['Subject'] = Header(subject, encoding)
+    msg['From'] = from_addr
+    msg['To'] = to_addr
+    msg['Date'] = formatdate()
+    
+    ADDRESS = "******@gmail.com"
+ 
+    _user =  "*************************"
+    _pass = "************************* "
+
+
+    smtp = smtplib.SMTP(server, port)
+    smtp.ehlo()
+    smtp.starttls()
+    smtp.ehlo()
+    smtp.login(_user, _pass)
+    smtp.sendmail(from_addr, [to_addr], msg.as_string())
+    smtp.close()
+     
+                
+def capture():
+    camera = picamera.PiCamera()
+    camera.hflip = True
+    camera.vflip = True
+    camera.resolution = (480,360)
+    now = datetime.datetime.now()
+    fmt_name = "pic_{0:%Y%m%d-%H%M%S}.png".format(now)
+    time.sleep(2)
+    camera.capture(fmt_name)
+    time.sleep(2)
+    camera.close()
+    return fmt_name
+    
+if __name__ == '__main__':
+    main()

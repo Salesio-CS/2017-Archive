@@ -1,0 +1,5 @@
+・dht11_example_server.py
+  温湿度センサーから温度と湿度を取得しサーバーに送信するプログラム。(「dht11.py」と「upload_Values.py」を同じディレクトリに配置する必要がある。)
+
+・soil_example_server.py
+  土壌センサーから土壌内の湿度を取得しサーバーに送信するプログラム。(「upload_Values_ug.py」を同じディレクトリに配置する必要がある。)

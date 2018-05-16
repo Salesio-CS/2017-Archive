@@ -1,0 +1,23 @@
+client to server
+	content weight request
+		req cw
+	circuit turn on request
+		req con
+	circuit turn off request
+		req cof
+	circuit state request
+		req cs
+
+
+server to client
+	content weiht notification <number>
+		not cw <number>
+	circuit state notification <boolean>
+		not cs <boolean>
+
+
+
+
+
+
+

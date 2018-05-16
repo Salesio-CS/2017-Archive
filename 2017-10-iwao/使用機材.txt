@@ -1,0 +1,4 @@
+MPU-6050 3軸ジャイロ＋3軸加速度センサー
+GWSサーボS03T/2BB+MG/F(フタバ)
+Raspberry Pi 3 MODEL B
+ジャンパワイヤー

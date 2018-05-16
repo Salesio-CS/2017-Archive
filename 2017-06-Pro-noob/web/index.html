@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>植物見太郎（積み太郎）</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="my_chart.js"></script>
+  </head>
+
+  <body>
+      <div class="container">
+        <div id="canvasjs"></div>
+        <!-- <script type="text/javascript">
+        $(function() {
+
+        </script> -->
+      </div><!-- /container -->
+
+      <ul class="nav nav-pills" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="temp-tab" onclick="drawTemp()" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+            温度（おんど）
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="hum-tab" onclick="drawHum()" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+            湿度（しつど）
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="ughum-tab" onclick="drawUghum()" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+            地中湿度（ちちゅうしつど）
+          </a>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="temp-tab">
+          <div id="charttemp" style=""></div>
+        </div><!-- /tabs -->
+
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="hum-tab">
+          <div id="charthum" style=""></div>
+        </div><!-- /tabs -->
+
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="ughum-tab">
+          <div id="chartughum" style=""></div>
+        </div><!-- /tabs -->
+      </div><!-- /container -->
+
+      <button id="btn_1"　type="button" class="btn btn-primary btn-lg btn-block" style="position: fixed; bottom: 0;" onclick="drawAll()">データ更新</button>
+  </body>
+</html>

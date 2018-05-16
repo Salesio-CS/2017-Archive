@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>センサーデータ</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+      <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+              Sensor Data
+          </a>
+      </div>
+  </div><!-- container -->
+  </nav>
+
+  <div class="container">
+    温度データグラフ<br />
+    <div id="canvasjs"></div>
+    <input id="btn_1" type="button" value="データ取得" />
+
+    <script type="text/javascript">
+    //画面構築完了後
+    window.onload = function () {
+            //データを取得し、jsonというオブジェクトに入れる
+            $.getJSON("http://192.168.2.104:8080/web-test/tempValues.php", function(tmpdata){
+                var chart = new CanvasJS.Chart("chartjs", {
+                    title: {
+                        text: "温度データ"  //グラフタイトル
+                    },
+                    theme: "light2",  //デフォルトテーマに設定
+                    data: [{
+                        type: 'line',  //グラフの種類
+                        dataPoints: tmpdata //表示するデータ
+                    }]
+                });
+                chart.render();
+            });
+    });
+    </script>
+
+  </div><!-- /container -->
+
+
+  <div id="chartjs" style="height: 400px; width: 80%;"></div>
+
+  </body>
+</html>

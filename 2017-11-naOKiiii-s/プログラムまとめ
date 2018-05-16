@@ -1,0 +1,47 @@
+
+#カメラ撮影
+
+print "App Start"
+        print "ctrl+c  :  if you want to stop app"
+        while True:
+            if (GPIO.input(sensor_pin) == GPIO.HIGH):
+                print('shot!!!!')
+                filename = 'naoki.jpg'
+                save_file = '/home/pi/Public' + '/' + filename
+                cam.capture(save_file)
+                msg = create_message(me, you, subject, body, save_file)
+                print('wait...')
+                s.sendmail(me,you,msg.as_string())
+                print('OK!!')
+            else:
+                time.sleep(1)
+    except KeyboardInterrupt:
+        print "Quit"
+    finally:
+        print "clean up"
+        GPIO.cleanup()
+        s.quit()
+
+#メッセージ送信
+
+def create_message(from_addr, to_addr, subject, body, attach_file):
+    """
+    msg = MIMEMultipart()
+    msg["Subject"] = subject
+    msg["From"] = from_addr
+    msg["To"] = to_addr
+    msg["Date"] = formatdate()
+
+    body = MIMEText(body)
+    msg.attach(body)
+
+    attachment = MIMEBase("image","jpeg")
+
+    file = open(attach_file)
+    attachment.set_payload(file.read())
+    file.close()
+    Encoders.encode_base64(attachment)
+    msg.attach(attachment)
+    attachment.add_header("Content-Disposition","attachment", filename=attach_file)
+
+    return msg

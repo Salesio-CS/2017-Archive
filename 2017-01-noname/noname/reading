@@ -1,0 +1,28 @@
+#include<iostream>
+#include<opencv2/opencv.hpp>
+#include<opencv2/opencv_modules.hpp>
+#include<opencv2/highgui/highgui.hpp>
+#include <opencv2/core.hpp>
+#include <windows.h>
+using namespace cv;
+
+
+	int capture(int argc, char* argv[])
+	{
+		Mat mat;
+		VideoCapture vcap(0);
+
+		if (!vcap.isOpened())
+			return -1;
+
+		while (1) {
+			vcap >> mat;
+			Sleep(3000);
+			imshow("camera", mat);
+			imwrite("grid.jpg", mat);
+
+		}
+		return 0;
+	}
+
+

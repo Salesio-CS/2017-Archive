@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content = "initial-scale=1, user-scalable = 0" />
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript">
+    webiopi().ready(function() {
+        var parts;
+        // 赤
+        parts = webiopi().createRatioSlider(22);
+        $("#red").append(parts);
+
+        // 緑
+        parts = webiopi().createRatioSlider(17);
+        $("#green").append(parts);
+
+	//青
+        parts = webiopi().createRatioSlider(27);
+        $("#blue").append(parts);
+    });
+    </script>
+</head>
+<body>
+<div id="content" align="center">
+    <div id="red"><label>red</label></div>
+    <input type="range" step="0.01" max="1.0" min="0.0" id="ratio22">
+   
+    <div id="green"><label>green</label></div>
+    <input type="range" step="0.01" max="1.0" min="0.0" id="ratio17">
+    
+    <div id="blue"><label>blue</label></div>
+    <input type="range" step="0.01" max="1.0" min="0.0" id="ratio27">
+</div>
+</body>
+</html>

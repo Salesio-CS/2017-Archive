@@ -1,0 +1,292 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content = "initial-scale=1, user-scalable = 0" />
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript"></script>
+    <title>MUSIC</title>
+    <style type="text/css">
+
+      body{
+      background-color: #DDDDDD;
+      }
+
+      input.select1{
+      width: 500px;
+      }
+      input.select2{
+      width: 50px;
+      }
+
+      input.select1{
+      font-size: 120%;
+      }
+      input.select2{
+      font-size: 120%;
+      }
+
+      input[type="radio"]{
+      display: none; /* ラジオボタンを非表示にする */
+      }
+
+      .red:checked + label {
+      background: #FF0000;/* マウス選択時の背景色を指定する */
+      color: #ffffff; /* マウス選択時のフォント色を指定する */
+      }
+      .red+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 35px;/* ボックス内左側の余白を指定する */
+      padding-right: 35px;/* ボックス内御右側の余白を指定する */
+      color: #FF0000;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #FF0000;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+      .green:checked + label {
+      background: #008000;/* マウス選択時の背景色を指定する */
+      color: #ffffff; /* マウス選択時のフォント色を指定する */
+      }
+      .green+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 35px;/* ボックス内左側の余白を指定する */
+      padding-right: 35px;/* ボックス内御右側の余白を指定する */
+      color: #008000;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #008000;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+      .yellow:checked + label {
+      background: #DAA520;/* マウス選択時の背景色を指定する */
+      color: #ffffff; /* マウス選択時のフォント色を指定する */
+      }
+      .yellow+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 35px;/* ボックス内左側の余白を指定する */
+      padding-right: 35px;/* ボックス内御右側の余白を指定する */
+      color: #DAA520;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #DAA520;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+      .blue:checked + label {
+      background: #0000FF;/* マウス選択時の背景色を指定する */
+      color: #ffffff; /* マウス選択時のフォント色を指定する */
+      }
+      .blue+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 35px;/* ボックス内左側の余白を指定する */
+      padding-right: 35px;/* ボックス内御右側の余白を指定する */
+      color: #0000FF;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #0000FF;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+      .purple:checked + label {
+      background: #9057FF;/* マウス選択時の背景色を指定する */
+      color: #ffffff; /* マウス選択時のフォント色を指定する */
+      }
+      .purple+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 35px;/* ボックス内左側の余白を指定する */
+      padding-right: 35px;/* ボックス内御右側の余白を指定する */
+      color: #9057FF;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #9057FF;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+      .orange:checked + label {
+      background: #FF6928;/* マウス選択時の背景色を指定する */
+      color: #ffffff; /* マウス選択時のフォント色を指定する */
+      }
+      .orange+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 0px;/* ボックス内左側の余白を指定する */
+      padding-right: 0px;/* ボックス内御右側の余白を指定する */
+      color: #FF6928;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #FF6928;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+      .pink:checked + label {
+      background: #FF00FF;/* マウス選択時の背景色を指定する */
+      color: #ffffff; /* マウス選択時のフォント色を指定する */
+      }
+      .pink+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 15px;/* ボックス内左側の余白を指定する */
+      padding-right: 15px;/* ボックス内御右側の余白を指定する */
+      color: #FF00FF;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #FF00FF;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+      .white:checked + label {
+      background: #FFFFFF;/* マウス選択時の背景色を指定する */
+      color: #000000; /* マウス選択時のフォント色を指定する */
+      border: 2px solid #FFFFFF;/* ボックスの境界線を実線で指定する */
+      }
+      .white+label{
+      margin: 0px;/* ボックス外側の余白を指定する */
+      width: 100px;/* ボックスの横幅を指定する */
+      height: 28px;/* ボックスの高さを指定する */
+      padding-left: 35px;/* ボックス内左側の余白を指定する */
+      padding-right: 35px;/* ボックス内御右側の余白を指定する */
+      color: #000000;/* フォントの色を指定 */
+      text-align: center;/* テキストのセンタリングを指定する */
+      line-height: 30px;/* 行の高さを指定する */
+      cursor: pointer;/* マウスカーソルの形（リンクカーソル）を指定する */
+      border: 2px solid #000000;/* ボックスの境界線を実線で指定する */
+      border-radius: 5px;/* 角丸を指定する */
+      }
+
+    </style>
+</head>
+
+<body>
+<form action="cgi-bin/formmail.cgi" method="post">
+<br>
+
+<font size="6">
+<p align="center"><b>URLを入力してください↓</b><br>
+</font>
+<input name="url" type="text" class="select1" value="http://" >
+</p>
+<br><br>
+
+<font size="6">
+&emsp;&emsp;&emsp;<b>時間を入力してください</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<b>色を選択してください</b>
+</font><br>
+
+<font size="5">
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color1" value="赤1" class="red" id="red1"><label for="red1">赤</label>
+<input type="radio" name="color1" value="緑1" class="green" id="green1"><label for="green1">緑</label>
+<input type="radio" name="color1" value="黄1" class="yellow" id="yellow1"><label for="yellow1">黄</label>
+<input type="radio" name="color1" value="青1" class="blue" id="blue1"><label for="blue1">青</label>
+<input type="radio" name="color1" value="紫1" class="purple" id="purple1"><label for="purple1">紫</label>
+<input type="radio" name="color1" value="オレンジ1" class="orange" id="orange1"><label for="orange1">オレンジ</label>
+<input type="radio" name="color1" value="ピンク1" class="pink" id="pink1"><label for="pink1">ピンク</label>
+<input type="radio" name="color1" value="白1" class="white" id="white1"><label for="white1">白</label>
+<br><br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color2" value="赤2" class="red" id="red2"><label for="red2">赤</label>
+<input type="radio" name="color2" value="緑2" class="green" id="green2"><label for="green2">緑</label>
+<input type="radio" name="color2" value="黄2" class="yellow" id="yellow2"><label for="yellow2">黄</label>
+<input type="radio" name="color2" value="青2" class="blue" id="blue2"><label for="blue2">青</label>
+<input type="radio" name="color2" value="紫2" class="purple" id="purple2"><label for="purple2">紫</label>
+<input type="radio" name="color2" value="オレンジ2" class="orange" id="orange2"><label for="orange2">オレンジ</label>
+<input type="radio" name="color2" value="ピンク2" class="pink" id="pink2"><label for="pink2">ピンク</label>
+<input type="radio" name="color2" value="白2" class="white" id="white2"><label for="white2">白</label>
+<br><br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color3" value="赤3" class="red" id="red3"><label for="red3">赤</label>
+<input type="radio" name="color3" value="緑3" class="green" id="green3"><label for="green3">緑</label>
+<input type="radio" name="color3" value="黄3" class="yellow" id="yellow3"><label for="yellow3">黄</label>
+<input type="radio" name="color3" value="青3" class="blue" id="blue3"><label for="blue3">青</label>
+<input type="radio" name="color3" value="紫3" class="purple" id="purple3"><label for="purple3">紫</label>
+<input type="radio" name="color3" value="オレンジ3" class="orange" id="orange3"><label for="orange3">オレンジ</label>
+<input type="radio" name="color3" value="ピンク3" class="pink" id="pink3"><label for="pink3">ピンク</label>
+<input type="radio" name="color3" value="白3" class="white" id="white3"><label for="white3">白</label>
+<br><br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color4" value="赤4" class="red" id="red4"><label for="red4">赤</label>
+<input type="radio" name="color4" value="緑4" class="green" id="green4"><label for="green4">緑</label>
+<input type="radio" name="color4" value="黄4" class="yellow" id="yellow4"><label for="yellow4">黄</label>
+<input type="radio" name="color4" value="青4" class="blue" id="blue4"><label for="blue4">青</label>
+<input type="radio" name="color4" value="紫4" class="purple" id="purple4"><label for="purple4">紫</label>
+<input type="radio" name="color4" value="オレンジ4" class="orange" id="orange4"><label for="orange4">オレンジ</label>
+<input type="radio" name="color4" value="ピンク4" class="pink" id="pink4"><label for="pink4">ピンク</label>
+<input type="radio" name="color4" value="白4" class="white" id="white4"><label for="white4">白</label>
+<br><br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color5" value="赤5" class="red" id="red5"><label for="red5">赤</label>
+<input type="radio" name="color5" value="緑5" class="green" id="green5"><label for="green5">緑</label>
+<input type="radio" name="color5" value="黄5" class="yellow" id="yellow5"><label for="yellow5">黄</label>
+<input type="radio" name="color5" value="青5" class="blue" id="blue5"><label for="blue5">青</label>
+<input type="radio" name="color5" value="紫5" class="purple" id="purple5"><label for="purple5">紫</label>
+<input type="radio" name="color5" value="オレンジ5" class="orange" id="orange5"><label for="orange5">オレンジ</label>
+<input type="radio" name="color5" value="ピンク5" class="pink" id="pink5"><label for="pink5">ピンク</label>
+<input type="radio" name="color5" value="白5" class="white" id="white5"><label for="white5">白</label>
+<br><br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color6" value="赤6" class="red" id="red6"><label for="red6">赤</label>
+<input type="radio" name="color6" value="緑6" class="green" id="green6"><label for="green6">緑</label>
+<input type="radio" name="color6" value="黄6" class="yellow" id="yellow6"><label for="yellow6">黄</label>
+<input type="radio" name="color6" value="青6" class="blue" id="blue6"><label for="blue6">青</label>
+<input type="radio" name="color6" value="紫6" class="purple" id="purple6"><label for="purple6">紫</label>
+<input type="radio" name="color6" value="オレンジ6" class="orange" id="orange6"><label for="orange6">オレンジ</label>
+<input type="radio" name="color6" value="ピンク6" class="pink" id="pink6"><label for="pink6">ピンク</label>
+<input type="radio" name="color6" value="白6" class="white" id="white6"><label for="white6">白</label>
+<br><br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color7" value="赤7" class="red" id="red7"><label for="red7">赤</label>
+<input type="radio" name="color7" value="緑7" class="green" id="green7"><label for="green7">緑</label>
+<input type="radio" name="color7" value="黄7" class="yellow" id="yellow7"><label for="yellow7">黄</label>
+<input type="radio" name="color7" value="青7" class="blue" id="blue7"><label for="blue7">青</label>
+<input type="radio" name="color7" value="紫7" class="purple" id="purple7"><label for="purple7">紫</label>
+<input type="radio" name="color7" value="オレンジ7" class="orange" id="orange7"><label for="orange7">オレンジ</label>
+<input type="radio" name="color7" value="ピンク7" class="pink" id="pink7"><label for="pink7">ピンク</label>
+<input type="radio" name="color7" value="白7" class="white" id="white7"><label for="white7">白</label>
+<br><br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="select2">秒&emsp;〜&emsp;<input type="text" class="select2">秒&emsp;&emsp;&emsp;&emsp;&emsp;
+<input type="radio" name="color8" value="赤8" class="red" id="red8"><label for="red8">赤</label>
+<input type="radio" name="color8" value="緑8" class="green" id="green8"><label for="green8">緑</label>
+<input type="radio" name="color8" value="黄8" class="yellow" id="yellow8"><label for="yellow8">黄</label>
+<input type="radio" name="color8" value="青8" class="blue" id="blue8"><label for="blue8">青</label>
+<input type="radio" name="color8" value="紫8" class="purple" id="purple8"><label for="purple8">紫</label>
+<input type="radio" name="color8" value="オレンジ8" class="orange" id="orange8"><label for="orange8">オレンジ</label>
+<input type="radio" name="color8" value="ピンク8" class="pink" id="pink8"><label for="pink8">ピンク</label>
+<input type="radio" name="color8" value="白8" class="white" id="white8"><label for="white8">白</label>
+
+</font>
+
+<br>
+
+<p align="center">
+<input type="button" value="開く" onclick="window.open(this.form.url.value,'freelink')"><input type="reset" value="リセット">
+</p>
+</form>
+</body>
+</html>
